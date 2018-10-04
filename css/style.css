@@ -1,9 +1,5 @@
 .paperColumn {
-    border: 0.1em solid black;
     border-radius: 1em;
     margin-top: 1em;
-}
-
-.imgSpaces {
-    margin: 1em 0 1em 0;
+    overflow: hidden;
 }
