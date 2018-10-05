@@ -3,3 +3,27 @@
     margin-top: 1em;
     overflow: hidden;
 }
+
+#buttonScrollUp {
+    display: none;
+}
+
+.redesSociales div {
+    margin: 0 0 1em 0;
+}
+
+.iContorno div img {
+    padding: 0.5em;
+    border: 0.05em solid grey;
+    border-radius: 10%;
+    box-shadow: 0.3em 0.3em 0.5em black;
+}
+
+.iContorno div img:hover {
+    cursor: pointer;
+    background-color: silver;
+}
+
+.iContorno div img:active {
+    box-shadow: 0 0 0.5em black;
+}

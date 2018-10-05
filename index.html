@@ -24,7 +24,7 @@
 
   <div class="container">
     <div class="row center">
-      <div class="col s12 ">
+      <div class="col s12 m5 offset-m1">
         <div class="card paperColumn">
           <div class="card-image">
             <img src="images/profilePhoto.jpg" alt="David Merinero profile photo">
@@ -41,9 +41,50 @@
           </div>
         </div>
       </div>
+
+      <div class="col s12 m5">
+        <div class="card paperColumn">
+          <div id="" class="row center redesSociales">
+            <div class="col s10 offset-s1">
+              <h3>Redes Sociales</h3>
+            </div>
+
+            <div class="col s10 offset-s1">
+              <div class="row redesSociales iContorno">
+                <div class="col s6">
+                  <img src="images/github.png" alt="GitHub" onclick="openInNewTab('https://github.com/dmerinero');">
+                </div>
+                <div class="col s6">
+                  <img src="images/instagram.png" alt="Instagram" onclick="openInNewTab('https://www.instagram.com/merievil');">
+                </div>
+                <div class="col s6">
+                  <img src="images/telegram.png" alt="Telegram" onclick="openInNewTab('https://t.me/DavidMerinero');">
+                </div>
+                <div class="col s6">
+                  <img src="images/twitter.png" alt="Twitter" onclick="openInNewTab('https://www.instagram.com/merievil');">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
+
+    <div id="buttonScrollUp" class="fixed-action-btn">
+      <a class="waves-effect waves-light btn btn-floating button-collapse" onclick="scrollUp();">
+        <i class="material-icons">arrow_upward</i>
+      </a>
+    </div>
   </div>
+
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+        Made by <a href="https://github.com/dmerinero">dmerinero</a>
+      </div>
+    </div>
+  </footer>
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
