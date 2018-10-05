@@ -9,17 +9,19 @@ function scrollFunction() {
 }
 
 function goUp(){
-    window.scrollBy(0, -1);
+    //window.scrollBy(0, -1);
 }
 
 function scrollUp() {
-    var i = 0;
+    window.scrollTo(0, 0);
+    goUp();
+    /*var i = 0;
     var max = document.documentElement.scrollTop;
 
     while(i < max) {
         goUp(i);
         i++;
-    }
+    }*/
     
     document.getElementById("buttonScrollUp").style.display = "none";
 }
