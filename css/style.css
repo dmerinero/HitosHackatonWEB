@@ -27,3 +27,36 @@
 .iContorno div img:active {
     box-shadow: 0 0 0.5em black;
 }
+
+.highlight {
+    background-color: orange;
+}
+
+.colorSearchCard {
+    background-color: rgb(252, 153, 117);
+}
+
+.buttonSearch {
+    background-color: rgb(252, 153, 117);
+    border-radius: 15%;
+    border: none;
+    min-width: 2em;
+    width: 3em;
+    max-width: 3em;
+}
+
+.buttonSearch:focus {
+    background-color: rgb(252, 153, 117);
+}
+
+.buttonSearch:active {
+    background-color: rgb(248, 230, 64);
+}
+
+.buttonSearch i {
+    margin: 5px;
+}
+
+.searchCardPadding {
+    padding-top: 1em !important;
+}
