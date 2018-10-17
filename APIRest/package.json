@@ -1,0 +1,14 @@
+{
+  "name": "apirest",
+  "version": "1.0.0",
+  "description": "An API RESTful with Node.js and Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Merinero Haro",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
