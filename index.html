@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/loader.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
 </head>
 
@@ -28,7 +29,21 @@
 
   <div class="container">
     <div class="row center">
+
       <div class="col s12 m5 offset-m1">
+        <div class="card paperColumn searchCardPadding colorSearchCard">
+          <div class="row">
+            <div class="col s7 offset-s1">
+              <input id="searchBar" type="text" oninput="cleanPageUnderline();">
+            </div>
+            <div class="col s3 searchCardPadding">
+              <button class="buttonSearch" onclick="search();">
+                <i class="material-icons">search</i>
+              </button>
+            </div>
+          </div>
+        </div>
+
         <div class="card paperColumn">
           <div class="card-image">
             <img src="images/profilePhoto.jpg" alt="David Merinero profile photo">
@@ -47,15 +62,21 @@
       </div>
 
       <div class="col s12 m5">
-        <div class="card paperColumn searchCardPadding colorSearchCard">
-          <div class="row">
-            <div class="col s7 offset-s1">
-              <input id="searchBar" type="text" oninput="cleanPageUnderline();">
+
+        <div class="card paperColumn">
+          <div class="row center">
+            <div class="col s10 offset-s1">
+              <h3 class="content">GitHub Stars</h3>
             </div>
-            <div class="col s3 searchCardPadding">
-              <button class="buttonSearch" onclick="search();">
-                <i class="material-icons">search</i>
-              </button>
+            <div class="col s10 offset-s1">
+              <div id="starsLoader" class="loader hidden">
+                <svg class="circular" viewBox="25 25 50 50">
+                  <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+                </svg>
+              </div>
+              <div id="stars" class="hidden">
+                <p id="starsNumber" class="content"></p>
+              </div>
             </div>
           </div>
         </div>

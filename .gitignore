@@ -71,3 +71,6 @@ typings/
 
 # Serverless directories
 .serverless
+
+# Thumbs.db files
+Thumbs.db*
