@@ -28,6 +28,10 @@ body {
     display: none;
 }
 
+#buttonScrollUp a {
+    background-color: #B2370D;
+}
+
 .redesSociales div {
     margin: 0 0 1em 0;
 }
