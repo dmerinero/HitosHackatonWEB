@@ -17,6 +17,16 @@ app.get('/api/hora', (req, res) => {
   })
 })
 
+app.get('/api/lmgtfy/:search', (req, res) => {
+
+  var searchString = req.params.search;
+  var url = "http://lmgtfy.com/?q=" + searchString.toString().replace("+", "%2B").replace(" ", "+");
+
+  res.json({
+    message: `Let me Google that for you ${searchString}: ${url}`
+  })
+})
+
 app.listen(port, () => {
   console.log(`API REST running on port ${port}`)
 })
