@@ -54,18 +54,18 @@
 @keyframes color {
   100%,
   0% {
-    stroke: #B2370D;
+    stroke: #784838;
   }
   40% {
-    stroke: #FF6F3E;
+    stroke: #F7784D;
   }
   66% {
-    stroke: #FF5C25;
+    stroke: #FF6530;
   }
   80% {
-    stroke: #00B28A;
+    stroke: #7BC2B2;
   }
   90% {
-    stroke: #25FFCD;
+    stroke: #84E5CF;
   }
 }

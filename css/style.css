@@ -1,21 +1,21 @@
 /** PALETA DE COLORES:
-*   MARRON = #B2370D
-*   MAQUILLAJE = #FF6F3E
-*   NARANJITO = #FF5C25
-*   BLUESEA = #00B28A
-*   LIGHTBLUE = #25FFCD
+*   AUTUMN-BROWN = #784838
+*   CREAM = #F7784D
+*   NARANJITO = #FF6530
+*   BLUE-GREY = #7BC2B2
+*   LIGHT-BLUE = #84E5CF
 **/
 
-body {
-    background-color: #00B28A;
+.pageBackground {
+    background-color: #7BC2B2;
 }
 
 .header {
-    background-color: #FF6F3E !important;
+    background-color: #F7784D !important;
 }
 
 .page-footer {
-    background-color: #FF6F3E !important;
+    background-color: #F7784D !important;
 }
 
 .paperColumn {
@@ -29,7 +29,7 @@ body {
 }
 
 #buttonScrollUp a {
-    background-color: #B2370D;
+    background-color: #784838;
 }
 
 .redesSociales div {
@@ -74,7 +74,7 @@ body {
 }
 
 .buttonSearch:active {
-    background-color: #FF6F3E;
+    background-color: #F7784D;
 }
 
 .buttonSearch i {

@@ -18,7 +18,6 @@ app.get('/api/hora', (req, res) => {
 })
 
 app.get('/api/lmgtfy/:search', (req, res) => {
-
   var searchString = req.params.search;
   var url = "http://lmgtfy.com/?q=" + searchString.toString().replace("+", "%2B").replace(" ", "+");
 

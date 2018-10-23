@@ -16,120 +16,120 @@
 </head>
 
 <body>
+  <div class="pageBackground">
+    <header>
+      <nav class="header" role="navigation">
+        <div class="nav-wrapper center">
+          <div class="container">
+            <span class="content">About DMerinero...</span>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-  <header>
-    <nav class="header" role="navigation">
-      <div class="nav-wrapper center">
+    <div class="container">
+      <div class="row center">
+
+        <div class="col s12 m5 offset-m1">
+          <div class="card paperColumn searchCardPadding colorSearchCard">
+            <div class="row">
+              <div class="col s8 offset-s1">
+                <input id="searchBar" type="text" oninput="cleanPageUnderline();">
+              </div>
+              <div class="col s2 searchCardPadding">
+                <button class="buttonSearch" onclick="search();">
+                  <i class="material-icons">search</i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card paperColumn">
+            <div class="card-image">
+              <img src="images/profilePhoto.jpg" alt="David Merinero profile photo">
+              <span class="card-title content">David Merinero Haro</span>
+            </div>
+            <div class="card-content">
+              <p class="content">¡Hey! Soy David, estudiante de la ETSISI en el Campus Sur de la UPM.
+                También soy socio de la asociación universitaria CoreDumped, en la que
+                tratamos de aportar un valor añadido a nuestra experiencia en nuestro campo,
+                aprendiendo y enseñando diferentes tecnologías de las TIC. ¡Si me veis
+                por el local podeis preguntarme vuestras inquietudes y os echaré una mano!
+              </p>
+              <p class="content">P.D.: Ahora tengo más barba</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m5">
+
+          <div class="card paperColumn">
+            <div class="row center">
+              <div class="col s10 offset-s1">
+                <h3 class="content">GitHub Stars</h3>
+              </div>
+              <div class="col s10 offset-s1">
+                <div id="starsLoader" class="loader hidden">
+                  <svg class="circular" viewBox="25 25 50 50">
+                    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+                  </svg>
+                </div>
+                <div id="stars" class="hidden">
+                  <p id="starsNumber" class="content"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card paperColumn">
+            <div class="row center redesSociales">
+              <div class="col s10 offset-s1">
+                <h3 class="content">Redes Sociales</h3>
+              </div>
+
+              <div class="col s10 offset-s1">
+                <div class="row redesSociales iContorno">
+                  <div class="col s6">
+                    <img src="images/github.png" alt="GitHub" onclick="openInNewTab('https://github.com/dmerinero');">
+                  </div>
+                  <div class="col s6">
+                    <img src="images/instagram.png" alt="Instagram" onclick="openInNewTab('https://www.instagram.com/merievil');">
+                  </div>
+                  <div class="col s6">
+                    <img src="images/telegram.png" alt="Telegram" onclick="openInNewTab('https://t.me/DavidMerinero');">
+                  </div>
+                  <div class="col s6">
+                    <img src="images/twitter.png" alt="Twitter" onclick="openInNewTab('https://twitter.com/merievil7?s=09');">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="buttonScrollUp" class="fixed-action-btn">
+        <a class="waves-effect waves-light btn btn-floating button-collapse" onclick="scrollUp();">
+          <i class="material-icons">arrow_upward</i>
+        </a>
+      </div>
+    </div>
+
+    <footer class="page-footer">
+      <div class="footer-copyright">
         <div class="container">
-          <span class="content">About DMerinero...</span>
+          <span class="content">Made by </span><a class="content noUriStyle" href="https://github.com/dmerinero">dmerinero</a>
         </div>
       </div>
-    </nav>
-  </header>
+    </footer>
 
-  <div class="container">
-    <div class="row center">
-
-      <div class="col s12 m5 offset-m1">
-        <div class="card paperColumn searchCardPadding colorSearchCard">
-          <div class="row">
-            <div class="col s8 offset-s1">
-              <input id="searchBar" type="text" oninput="cleanPageUnderline();">
-            </div>
-            <div class="col s2 searchCardPadding">
-              <button class="buttonSearch" onclick="search();">
-                <i class="material-icons">search</i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card paperColumn">
-          <div class="card-image">
-            <img src="images/profilePhoto.jpg" alt="David Merinero profile photo">
-            <span class="card-title content">David Merinero Haro</span>
-          </div>
-          <div class="card-content">
-            <p class="content">¡Hey! Soy David, estudiante de la ETSISI en el Campus Sur de la UPM.
-              También soy socio de la asociación universitaria CoreDumped, en la que
-              tratamos de aportar un valor añadido a nuestra experiencia en nuestro campo,
-              aprendiendo y enseñando diferentes tecnologías de las TIC. ¡Si me veis
-              por el local podeis preguntarme vuestras inquietudes y os echaré una mano!
-            </p>
-            <p class="content">P.D.: Ahora tengo más barba</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col s12 m5">
-
-        <div class="card paperColumn">
-          <div class="row center">
-            <div class="col s10 offset-s1">
-              <h3 class="content">GitHub Stars</h3>
-            </div>
-            <div class="col s10 offset-s1">
-              <div id="starsLoader" class="loader hidden">
-                <svg class="circular" viewBox="25 25 50 50">
-                  <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
-                </svg>
-              </div>
-              <div id="stars" class="hidden">
-                <p id="starsNumber" class="content"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card paperColumn">
-          <div class="row center redesSociales">
-            <div class="col s10 offset-s1">
-              <h3 class="content">Redes Sociales</h3>
-            </div>
-
-            <div class="col s10 offset-s1">
-              <div class="row redesSociales iContorno">
-                <div class="col s6">
-                  <img src="images/github.png" alt="GitHub" onclick="openInNewTab('https://github.com/dmerinero');">
-                </div>
-                <div class="col s6">
-                  <img src="images/instagram.png" alt="Instagram" onclick="openInNewTab('https://www.instagram.com/merievil');">
-                </div>
-                <div class="col s6">
-                  <img src="images/telegram.png" alt="Telegram" onclick="openInNewTab('https://t.me/DavidMerinero');">
-                </div>
-                <div class="col s6">
-                  <img src="images/twitter.png" alt="Twitter" onclick="openInNewTab('https://twitter.com/merievil7?s=09');">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div id="buttonScrollUp" class="fixed-action-btn">
-      <a class="waves-effect waves-light btn btn-floating button-collapse" onclick="scrollUp();">
-        <i class="material-icons">arrow_upward</i>
-      </a>
-    </div>
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/searcher.js"></script>
   </div>
-
-  <footer class="page-footer">
-    <div class="footer-copyright">
-      <div class="container">
-        <span class="content">Made by </span><a class="content noUriStyle" href="https://github.com/dmerinero">dmerinero</a>
-      </div>
-    </div>
-  </footer>
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/index.js"></script>
-  <script src="js/searcher.js"></script>
-
 </body>
 
 </html>
