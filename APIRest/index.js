@@ -19,12 +19,24 @@ app.get('/api/hora', (req, res) => {
 
 app.get('/api/lmgtfy/:search', (req, res) => {
   var searchString = req.params.search;
-  var url = "http://lmgtfy.com/?q=" + searchString.toString().replace("+", "%2B").replace(" ", "+");
+  replaceAll(searchString,"+", "%2B").then(content => {
+    replaceAll(content, " ", "+").then(content => {
+      var url = "http://lmgtfy.com/?q=" + content;
+      
+      console.log(url);
 
-  res.json({
-    message: `Let me Google that for you ${searchString}: ${url}`
-  })
+      res.json({
+      message: `Let me Google that for you ${searchString}: ${url}`
+      })
+    });
+  });
 })
+
+function replaceAll(s, search, replacement) {
+  return new Promise(function (resolve, reject) {
+    resolve(s.toString().split(search).join(replacement));
+  });
+}
 
 app.listen(port, () => {
   console.log(`API REST running on port ${port}`)
