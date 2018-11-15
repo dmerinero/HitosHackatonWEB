@@ -21,10 +21,10 @@ exports.findById = function (req, res) {
         }
 
         if (users === null) {
-            res.status(404).jsonp('User with id ' + req.params.id + ' not found');
+            res.status(404).jsonp(`User with id ${req.params.id} not found`);
         }
         else {
-            console.log('GET /users/' + req.params.id);
+            console.log(`GET /users/${req.params.id}`);
             res.status(200).jsonp(users);
         }
     });
@@ -48,7 +48,7 @@ exports.addUser = function (req, res) {
                     if (err)
                         return res.status(500).send(err.message);
 
-                    console.log('POST /users/add/' + id);
+                    console.log(`POST /users/add/${id}`);
                     res.status(201).jsonp(users);
                 });
             }).catch(err => {
@@ -111,7 +111,7 @@ function getHash(pass) {
 
 function checkField(field, name) {
     return new Promise(function (resolve, reject) {
-        field != undefined ? resolve() : reject(new Error(name.toString() + " field is required"));
+        field != undefined ? resolve() : reject(new Error(`${name.toString()} field is required`));
     });
 }
 
@@ -120,12 +120,10 @@ function checkUpdateString(field, data) {
 }
 
 function getDate() {
-    var date = new Date();
-    return date;
+    return new Date();
 }
 
 function checkUpdateString(field, data) {
-    // return field !== null ? field : data;
     if (field !== null && field !== undefined) {
         return field;
     } else {
@@ -137,7 +135,7 @@ function checkUpdateString(field, data) {
 exports.updateUser = function (req, res) {
     Users.findById(req.body.id, function (err, users) {
         if (users === null) {
-            res.status(404).jsonp('User with id ' + req.body.id + ' not found');
+            res.status(404).jsonp(`User with id ${req.body.id} not found`);
         }
         else {
             users.email = checkUpdateString(req.body.email, users.email);
@@ -163,13 +161,13 @@ exports.updateUser = function (req, res) {
 exports.deleteUser = function (req, res) {
     Users.findById(req.params.id, function (err, users) {
         if (users === null)
-            return res.status(404).send('User with id ' + req.params.id + ' not found');
+            return res.status(404).send(`User with id ${req.params.id} not found`);
         else {
             users.remove(function (err) {
                 if (err)
                     return res.status(500).send(err.message);
 
-                res.status(200).send('Deleted users with id ' + req.params.id);
+                res.status(200).send(`Deleted users with id ${req.params.id}`);
             });
         }
     });
@@ -222,7 +220,7 @@ exports.login = function (req, res) {
 
                 console.log('GET /users/login');
                 if (notFound) {
-                    res.status(404).jsonp('The user ' + req.body.username + 'is not in our datebase');
+                    res.status(404).jsonp(`The user ${req.body.username} is not in our datebase`);
                 } else {
                     if (wrongPass) {
                         res.status(404).jsonp('The password is wrong');

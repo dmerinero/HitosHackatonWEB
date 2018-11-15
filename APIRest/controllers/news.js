@@ -21,10 +21,10 @@ exports.findById = function (req, res) {
         }
 
         if (news === null) {
-            res.status(404).jsonp('News with id ' + req.params.id + ' not found');
+            res.status(404).jsonp(`News with id ${req.params.id} not found`);
         }
         else {
-            console.log('GET /news/' + req.params.id);
+            console.log(`GET /news/${req.params.id}`);
             res.status(200).jsonp(news);
         }
     });
@@ -50,7 +50,7 @@ exports.addNews = function (req, res) {
             if (err)
                 return res.status(500).send(err.message);
 
-            console.log('POST /news/add/' + content);
+            console.log(`POST /news/add/${content}`);
             res.status(201).jsonp(news);
         });
     })
@@ -105,13 +105,13 @@ function checkUpdateString(field, data) {
 exports.deleteNews = function (req, res) {
     News.findById(req.params.id, function (err, news) {
         if (users === null)
-            return res.status(404).send('News with id ' + req.params.id + ' not found');
+            return res.status(404).send(`News with id ${req.params.id} not found`);
         else {
             news.remove(function (err) {
                 if (err)
                     return res.status(500).send(err.message);
 
-                res.status(200).send('Deleted news with id ' + req.params.id);
+                res.status(200).send(`Deleted news with id ${req.params.id}`);
             })
         }
     });
@@ -132,7 +132,7 @@ exports.findBySection = function (req, res) {
             }
         }
 
-        console.log('GET /news/section/' + req.params.section);
+        console.log(`GET /news/section/${req.params.section}`);
         res.status(200).jsonp(news);
     });
 };

@@ -1,6 +1,5 @@
 'use strict'
 
-
 const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
@@ -36,9 +35,7 @@ app.get('/api/lmgtfy/:search', (req, res) => {
   var searchString = req.params.search;
   replaceAll(searchString, "+", "%2B").then(content => {
     replaceAll(content, " ", "+").then(content => {
-      var url = "http://lmgtfy.com/?q=" + content;
-
-      console.log(url);
+      var url = `http://lmgtfy.com/?q=${content}`;
 
       res.json({
         message: `Let me Google that for you ${searchString}: ${url}`
@@ -55,7 +52,7 @@ function replaceAll(s, search, replacement) {
 
 mongoose.connect('mongodb://localhost/HackatonTeamAPI', function (err, res) {
   if (err) {
-    console.log('ERROR: connecting to Database. ' + err);
+    console.log(`ERROR: connecting to Database. ${err}`);
   }
   app.listen(port, () => {
     console.log(`API REST running on port ${port}`)
