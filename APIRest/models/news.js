@@ -4,11 +4,11 @@ var mongoose = require('mongoose'),
 var newsSchema = new Schema({
   _id:      { type: String },
   title:    { type: String },
-  date:     { type: Date },
+  date:     { type: Date   },
   country:  { type: String },
   text:     { type: String },
   author:   { type: String },
-  section:    { type: String, enum:
+  section:  { type: String, enum:
     ['', 'Politic', 'Sport', 'Weather', 'Economy', 'Disaster']
         }
 });

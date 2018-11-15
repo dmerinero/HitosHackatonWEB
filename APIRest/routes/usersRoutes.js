@@ -17,7 +17,7 @@ module.exports = function(users){
     users.route('/users/delete/:id')
     .delete(UsersCtrl.deleteUser);
 
-    users.route('/users/newers/:section')
+    users.route('/users/newers')
     .get(UsersCtrl.newers);
 
     users.route('/users/login')

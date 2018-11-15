@@ -17,12 +17,16 @@ exports.findAllNews = function (req, res) {
 exports.findById = function (req, res) {
     News.findById(req.params.id, function (err, news) {
         if (err) {
-            console.log("ERROR")
             return res.status(500).send(err.message);
         }
 
-        console.log('GET /news/' + req.params.id);
-        res.status(200).jsonp(news);
+        if (news === null) {
+            res.status(404).jsonp('News with id ' + req.params.id + ' not found');
+        }
+        else {
+            console.log('GET /news/' + req.params.id);
+            res.status(200).jsonp(news);
+        }
     });
 };
 
@@ -47,7 +51,7 @@ exports.addNews = function (req, res) {
                 return res.status(500).send(err.message);
 
             console.log('POST /news/add/' + content);
-            res.status(200).jsonp(news);
+            res.status(201).jsonp(news);
         });
     })
 };
@@ -58,7 +62,6 @@ function checkField(field) {
 
 function getNewId() {
     return new Promise(function (resolve, reject) {
-
         News.find(function (err, news) {
             var max = 0;
 
@@ -68,7 +71,6 @@ function getNewId() {
 
             resolve(max + 1);
         });
-
     });
 }
 
@@ -80,10 +82,10 @@ function getDate() {
 //PUT - Update a register already exists
 exports.updateNews = function (req, res) {
     News.findById(req.body.id, function (err, news) {
-        news.title   = checkUpdateString(req.body.title, news.title);
+        news.title = checkUpdateString(req.body.title, news.title);
         news.country = checkUpdateString(req.body.country, news.country);
-        news.text    = checkUpdateString(req.body.text, news.text);
-        news.author  = checkUpdateString(req.body.author, news.author);
+        news.text = checkUpdateString(req.body.text, news.text);
+        news.author = checkUpdateString(req.body.author, news.author);
         news.section = checkUpdateString(req.body.section, news.section);
 
         news.save(function (err) {
@@ -102,12 +104,16 @@ function checkUpdateString(field, data) {
 //DELETE - Delete a News with specified ID
 exports.deleteNews = function (req, res) {
     News.findById(req.params.id, function (err, news) {
-        news.remove(function (err) {
-            if (err)
-                return res.status(500).send(err.message);
+        if (users === null)
+            return res.status(404).send('News with id ' + req.params.id + ' not found');
+        else {
+            news.remove(function (err) {
+                if (err)
+                    return res.status(500).send(err.message);
 
-            res.status(200).send('Deleted news with id ' + req.params.id);
-        })
+                res.status(200).send('Deleted news with id ' + req.params.id);
+            })
+        }
     });
 };
 
